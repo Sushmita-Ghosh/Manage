@@ -16,7 +16,7 @@ Memory Mojo is built with the following technologies:
 ## Deployment:
 The app is deployed [here](https://memory-mojo.vercel.app/).
 
-https://github.com/Sushmita-Ghosh/Sushmita-Ghosh/assets/82622059/f401bbc0-21e8-48d9-bbb5-b3fea8ebd3ed
+<img src="https://github.com/Sushmita-Ghosh/Sushmita-Ghosh/assets/82622059/f401bbc0-21e8-48d9-bbb5-b3fea8ebd3ed">
 
 ## Get Started:
 1. Clone the repo
