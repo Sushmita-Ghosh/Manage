@@ -16,6 +16,11 @@ Memory Mojo is built with the following technologies:
 ## Deployment:
 The app is deployed [here](https://memory-mojo.vercel.app/).
 
+## Get Started:
+1. CLone the repo
+2. npm install
+3. npm run dev
+
 ## Learnings:
 Shuffle Cards Logic
 
