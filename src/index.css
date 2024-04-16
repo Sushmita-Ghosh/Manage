@@ -1,3 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100..800;1,100..800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Glory", sans-serif;
+}
+
+@layer components {
+  body {
+    @apply bg-gray-950;
+  }
+  button {
+    @apply font-bold py-2 px-4 rounded-xl bg-yellow-light text-deep-brown text-xl;
+  }
+
+  h1 {
+    @apply font-bold text-5xl text-deep-brown;
+  }
+}

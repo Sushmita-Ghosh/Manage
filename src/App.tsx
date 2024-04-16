@@ -1,5 +1,13 @@
+import Header from "./components/Header";
+import GameBoard from "./components/GameBoard";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="min-h-screen p-4">
+      <Header />
+      <GameBoard />
+    </div>
+  );
 }
 
 export default App;
