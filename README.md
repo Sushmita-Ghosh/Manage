@@ -1,7 +1,22 @@
-# Memory-Mojo
+# Memory Mojo 🧠✨
+Welcome to Memory Mojo, the ultimate memory game that will challenge and entertain you with its vibrant gameplay and brain-boosting fun!
 
-### Learnings:
+## Technology Used
+Memory Mojo is built with the following technologies:
 
+* React: The game's user interface is developed using React, providing a responsive and interactive experience.
+* Lottie: Animations in Memory Mojo are powered by Lottie, allowing for seamless and engaging visual effects.
+* Tailwind CSS: The game's styling is implemented with Tailwind CSS, enabling rapid development and easy customization of design elements.
+
+## How to Play
+* Click on two cards to flip them over.
+* Try to remember the card positions and match pairs.
+* Match all the pairs and check in how many moves you did it !
+
+## Deployment:
+The app is deployed [here](https://memory-mojo.vercel.app/).
+
+## Learnings:
 Shuffle Cards Logic
 
 1. First we need to duplicate the cardArray --> then apply Math.random (to sort it in a random manner) --> then we are mapping over each and adding id --> duplicated 6\*6
