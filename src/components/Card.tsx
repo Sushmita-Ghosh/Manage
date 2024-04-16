@@ -1,4 +1,5 @@
 import cardBack from "../assets/card.jpeg";
+import "./css/Card.css";
 
 interface CardProps {
   card: {
@@ -8,31 +9,32 @@ interface CardProps {
   };
   handleChoice: (card: { src: string; id: number }) => void;
   flipped: boolean;
+  disabled: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ card, handleChoice, flipped }) => {
-  console.log(flipped);
+const Card: React.FC<CardProps> = ({
+  card,
+  handleChoice,
+  flipped,
+  disabled,
+}) => {
   const handleClick = () => {
-    handleChoice(card);
+    if (!disabled) {
+      handleChoice(card);
+    }
   };
   return (
     <div className="relative">
-      <div>
+      <div className={`card ${flipped ? "flipped" : ""}`}>
         {/* front of the card */}
         <img
-          className={`md:h-32 md:w-40 border-4 border-yellow-light rounded-lg absolute transition-all ease-in duration-200  ${
-            flipped
-              ? "[transform:rotateY(0deg)] delay-200"
-              : "[transform:rotateY(90deg)]"
-          }`}
+          className={`front md:h-32 md:w-40 border-4 border-yellow-light rounded-lg`}
           src={card.src}
           alt="card front"
         />
         {/* back of the card */}
         <img
-          className={`md:h-32 md:w-40 border-4 border-yellow-light rounded-lg delay-200 transition-all ease-in duration-200 ${
-            flipped ? "delay-0 [transform:rotateY(90deg)]" : ""
-          }`}
+          className={`back md:h-32 md:w-40 border-4 border-yellow-light rounded-lg`}
           src={cardBack}
           alt="card back"
           onClick={handleClick}

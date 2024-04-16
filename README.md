@@ -26,4 +26,12 @@ Shuffle Cards Logic
      - if it's choiceTwo
      - if they are matched i.e; or the matched property is true
 7. Why are we using setTimeout ?
+
    - if we don't we will not be able to see the cards that don't match
+
+8. Why we need the disabled prop ?
+   - The disabled prop is to ensure that we should not be able to make achoice if two choices are made - we want the cards tp turn over
+     only then we can make another choice.
+9. Why are we setting the choiceOne & choiceTwo as null before setting the cards?
+
+   - It because say an user selected one card and clicked on "New Game" but that card is still his choiceOne - which is not correct , henec we need to make these null when we start a new game.

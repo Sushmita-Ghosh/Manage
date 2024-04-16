@@ -1,0 +1,27 @@
+/* front of the card */
+
+.card .front {
+  position: absolute;
+  /* the card is rotated by default means back of the card will only be visible */
+  transform: rotateY(90deg);
+  transition: all 0.2s ease-in;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  /* front visible after 0.2s */
+  transition-delay: 0.2s;
+}
+
+/* back of the card */
+
+.card .back {
+  transform: rotateY(0deg);
+  transition: all 0.2s ease-in;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
