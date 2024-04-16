@@ -4,6 +4,7 @@ interface CardProps {
   card: {
     src: string;
     id: number;
+    matched: boolean;
   };
   handleChoice: (card: { src: string; id: number }) => void;
 }

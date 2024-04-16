@@ -3,7 +3,9 @@ import cardArray from "../constants/constants";
 import Card from "./Card";
 
 const GameBoard = () => {
-  const [cards, setCards] = useState<Array<{ src: string; id: number }>>([]);
+  const [cards, setCards] = useState<
+    Array<{ src: string; id: number; matched: boolean }>
+  >([]);
   const [moves, setMoves] = useState<number>(0);
   // for the first and second choice
   const [choiceOne, setChoiceOne] = useState<{
@@ -61,7 +63,19 @@ const GameBoard = () => {
     // if both choices are present and the src is same - it is a match
     if (choiceOne && choiceTwo) {
       if (choiceOne.src === choiceTwo.src) {
-        console.log("correct");
+        //  if the src is same we need to update the matched to true for both the choices in cards
+
+        // we are creating a new array with the updated cards with matched set to true
+        const newCards = cards.map((card) => {
+          if (card.src === choiceOne.src) {
+            return { ...card, matched: true };
+          } else {
+            return card;
+          }
+        });
+
+        // set the new cards - with matched set to true
+        setCards(newCards);
         resetMove();
       } else {
         console.log("wrong");
@@ -69,6 +83,8 @@ const GameBoard = () => {
       }
     }
   }, [choiceOne, choiceTwo]);
+
+  console.log(cards);
 
   return (
     <div className="w-full flex flex-col justify-center items-center p-4">

@@ -14,4 +14,8 @@ Shuffle Cards Logic
    - Swap arr[i] with the element at random index
 
 4. Why are we keeping a matched value in each of the cardArray element ?
+
    - The reason is when we have 2 choices (choiceOne and choiceTwo) - we can set the matched value for these two to be true.
+
+5. Why are we using useEffect to write the compare cards logic?
+   - This is necessary as state updated are async in nature, so we need to ensure that we keep track of choiceOne and choiceTwo as fire the useEffect whenever anyone of them updated. We can handle the logic of each of them having values inside useEffect.
