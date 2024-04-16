@@ -29,13 +29,12 @@ const Header: React.FC<HeaderProps> = ({ dark, setDark }) => {
         className="flex justify-center items-center bg-slate-100 dark:bg-gray-950 border-none"
         onClick={() => {
           setDark(!dark);
-          document.body.classList.toggle("dark");
         }}
       >
         {dark ? (
-          <img src={day} className="w-14 h-14" alt="day mode" />
+          <img src={night} className="w-14 h-14" alt="day mode" />
         ) : (
-          <img src={night} className="w-14 h-14" alt="night mode" />
+          <img src={day} className="w-14 h-14" alt="night mode" />
         )}
       </button>
     </section>
