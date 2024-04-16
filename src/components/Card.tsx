@@ -7,9 +7,11 @@ interface CardProps {
     matched: boolean;
   };
   handleChoice: (card: { src: string; id: number }) => void;
+  flipped: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ card, handleChoice }) => {
+const Card: React.FC<CardProps> = ({ card, handleChoice, flipped }) => {
+  console.log(flipped);
   const handleClick = () => {
     handleChoice(card);
   };
@@ -18,7 +20,9 @@ const Card: React.FC<CardProps> = ({ card, handleChoice }) => {
       <div>
         {/* front of the card */}
         <img
-          className="h-40 w-50 border-4 border-yellow-light rounded-lg"
+          className={`h-40 w-50 border-4 border-yellow-light rounded-lg absolute  ${
+            flipped ? "[transform:rotateY(0deg)]" : "[transform:rotateY(90deg)]"
+          }`}
           src={card.src}
           alt="card front"
         />

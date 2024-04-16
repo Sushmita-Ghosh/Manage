@@ -21,6 +21,7 @@ const GameBoard = () => {
     // duplicate the array
     const cards: Array<{
       src: string;
+      matched: boolean;
     }> = [...cardArray, ...cardArray];
 
     // shuffle the cards - using Fisher Yates algorithm
@@ -78,8 +79,9 @@ const GameBoard = () => {
         setCards(newCards);
         resetMove();
       } else {
-        console.log("wrong");
-        resetMove();
+        // if the src is not same - reset the choices
+        // do it after 1 sec so that the cards that don't match are visible
+        setTimeout(() => resetMove(), 1000);
       }
     }
   }, [choiceOne, choiceTwo]);
@@ -88,15 +90,20 @@ const GameBoard = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center p-4">
-      <div className="py-5">
-        <button onClick={shuffleCards}>Play</button>
-      </div>
-
       {/* card grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-5">
         {cards.map((card) => (
-          <Card card={card} key={card.id} handleChoice={handleChoice} />
+          <Card
+            card={card}
+            key={card.id}
+            handleChoice={handleChoice}
+            flipped={card.matched || card === choiceOne || card === choiceTwo}
+          />
         ))}
+      </div>
+
+      <div className="py-5">
+        <button onClick={shuffleCards}>Play</button>
       </div>
     </div>
   );

@@ -19,3 +19,11 @@ Shuffle Cards Logic
 
 5. Why are we using useEffect to write the compare cards logic?
    - This is necessary as state updated are async in nature, so we need to ensure that we keep track of choiceOne and choiceTwo as fire the useEffect whenever anyone of them updated. We can handle the logic of each of them having values inside useEffect.
+6. What is the flipped prop for?
+   - The flipped prop is for applying a class which will resemble the card flip,
+   - The card should remain flipped under 3 condition
+     - if it's choiceOne
+     - if it's choiceTwo
+     - if they are matched i.e; or the matched property is true
+7. Why are we using setTimeout ?
+   - if we don't we will not be able to see the cards that don't match
