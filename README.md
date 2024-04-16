@@ -20,7 +20,7 @@ The app is deployed [here](https://memory-mojo.vercel.app/).
 1. Clone the repo
 2. npm install
 3. npm run dev
-4. The app open at http://localhost:5173/.
+4. The app opens at http://localhost:5173/.
 
 ## Learnings:
 Shuffle Cards Logic
