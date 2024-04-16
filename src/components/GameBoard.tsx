@@ -90,20 +90,20 @@ const GameBoard = () => {
 
   return (
     <div className="w-full flex flex-col justify-center items-center p-4">
-      {/* card grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-5">
-        {cards.map((card) => (
-          <Card
-            card={card}
-            key={card.id}
-            handleChoice={handleChoice}
-            flipped={card.matched || card === choiceOne || card === choiceTwo}
-          />
-        ))}
-      </div>
-
       <div className="py-5">
         <button onClick={shuffleCards}>Play</button>
+      </div>
+      {/* card grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-5">
+        {cards &&
+          cards.map((card) => (
+            <Card
+              card={card}
+              key={card.id}
+              handleChoice={handleChoice}
+              flipped={card.matched || card === choiceOne || card === choiceTwo}
+            />
+          ))}
       </div>
     </div>
   );

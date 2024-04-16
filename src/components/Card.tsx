@@ -20,15 +20,19 @@ const Card: React.FC<CardProps> = ({ card, handleChoice, flipped }) => {
       <div>
         {/* front of the card */}
         <img
-          className={`h-40 w-50 border-4 border-yellow-light rounded-lg absolute  ${
-            flipped ? "[transform:rotateY(0deg)]" : "[transform:rotateY(90deg)]"
+          className={`md:h-32 md:w-40 border-4 border-yellow-light rounded-lg absolute transition-all ease-in duration-200  ${
+            flipped
+              ? "[transform:rotateY(0deg)] delay-200"
+              : "[transform:rotateY(90deg)]"
           }`}
           src={card.src}
           alt="card front"
         />
         {/* back of the card */}
         <img
-          className="h-40 w-50 border-4 border-yellow-light rounded-lg"
+          className={`md:h-32 md:w-40 border-4 border-yellow-light rounded-lg delay-200 transition-all ease-in duration-200 ${
+            flipped ? "delay-0 [transform:rotateY(90deg)]" : ""
+          }`}
           src={cardBack}
           alt="card back"
           onClick={handleClick}
